@@ -1,0 +1,7 @@
+mixin ServiceCategory(config)
+  .col-md-4.mb-4
+    .card.h-100
+      .card-body
+        h5.font-sans-serif.fw-bold.fs-md-0.fs-lg-1!=config.title
+        each text in config.texts
+          div.text-muted.fs--1.stretched-link.text-decoration-none(href='#!')!=text

@@ -1,0 +1,18 @@
+mixin NavbarLittleSquirrel
+  nav.navbar.navbar-expand-lg.navbar-light.sticky-top.py-3.d-block(data-navbar-on-scroll).bg-light
+    .container
+      a.navbar-brand(href='index.html')
+        img(src=`${CWD}assets/img/logo.png`   height="45"  alt='logo')
+
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon 
+      #navbarSupportedContent.collapse.navbar-collapse.border-top.border-lg-0.mt-4.mt-lg-0
+        ul.navbar-nav.ms-auto.pt-2.pt-lg-0.font-base
+          li.nav-item.px-2
+            a.nav-link(aria-current='page', href=`${CWD}index.html` class=currentPage === 'index' ? 'active' : false ) O Nás
+          li.nav-item.px-2
+            a.nav-link(aria-current='page', href=`${CWD}services.html` class=currentPage === 'pricing' ? 'active' : false) Služby
+          li.nav-item.px-2
+            a.nav-link(aria-current='page', href=`${CWD}prices.html` class=currentPage === 'web-development' ? 'active' : false) Ceny
+          li.nav-item.px-2
+            a.nav-link(aria-current='page', href=`${CWD}contact.html` class=currentPage === 'user-research' ? 'active' : false) Kontakt

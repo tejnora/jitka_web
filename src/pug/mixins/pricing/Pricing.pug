@@ -1,0 +1,27 @@
+include PricingTable
+
+append variables
+  -
+    var items= [
+      {
+      tableDescription:"Cena za geometrický plán",
+      items: [
+            {
+            name:"Vyznačení obvodu budovy",
+            price:"5000 - 6000"
+            },
+            {
+            name:"Oddělení pozemku do 1000 m2",
+            price:"5000 - 6000"    
+            },
+            {
+            name:"Oddělení pozemku 1000 m2 – 2000 m2",
+            price:"5000 - 6000"
+            }
+        ]
+      }
+    ]   
+
+mixin Pricing() 
+  +Section.pb-0(style="margin-top:-17rem")
+    +PricingTable(items[0])

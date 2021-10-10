@@ -1,0 +1,10 @@
+extends layouts/LayoutTheme
+include mixins/services/ServicesHeader
+include mixins/services/ServicesCategory
+
+prepend scripts
+  
+append content
+  +ServicesHeader
+  +ServicesCategory
+  

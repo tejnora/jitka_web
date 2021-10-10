@@ -1,0 +1,13 @@
+extends layouts/LayoutTheme
+include mixins/pricing/PricingHeader
+include mixins/pricing/Pricing
+
+
+append variables
+  - var currentPage = 'pricing'
+
+prepend scripts
+  
+append content
+  +PricingHeader 
+  +Pricing

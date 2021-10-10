@@ -1,0 +1,59 @@
+// 
+// 
+// user.scss
+//
+// Place your own theme CSS or SCSS rules below this line, these rules will override any Bootstrap and theme variables.
+.main_background {
+    background-image: url(../img/map-background.png);
+    height:100vh;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+.navbar-collapse ul li a,
+.navbar-collapse.fill ul li a {
+  position: relative;
+}
+.navbar-collapse ul li a:after,
+.navbar-collapse.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: $gray-800;
+  height: 2px;
+}
+
+.navbar-collapse ul li a:hover:after {
+    width: 100%;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.56rem 0.8rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4B5D68;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #94A2B3;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border-radius: 0;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  }
+
+  .btn-default{
+    background-color: $light;
+    border-color: $green;
+  }

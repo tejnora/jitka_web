@@ -1,0 +1,12 @@
+mixin PricingTable(data)
+  .h3 #{data.tableDescription}
+  table.table.table-striped  
+    thead
+      tr
+        th Výkon MJ : parcela/100 m
+        th Cena
+    tbody
+    each item in data.items
+      tr
+        td #{item.name}
+        td #{item.price} 
