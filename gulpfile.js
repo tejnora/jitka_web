@@ -1,22 +1,35 @@
-const gulp = require('gulp');
-const requireDir = require('require-dir');
+const { src, dest, watch } = require("gulp");
+const pug = require("gulp-pug");
 
-requireDir('./gulp');
+function html() {
+  return src("src/*.pug")
+    .pipe(pug({ pretty: true }))
+    .pipe(dest("dist"));
+}
 
-/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-|  Compile
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
-gulp.task('compile', gulp.parallel('style', 'script', 'script:webpack', 'vendor'));
-gulp.task('compile:all', gulp.parallel('compile', 'pug'));
+exports.html = html;
 
-/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-|  Deploy
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
-gulp.task('build', gulp.series('clean:build', 'build:static', 'compile:all'));
-gulp.task('build:test', gulp.series('build', 'watch'));
-gulp.task('live', gulp.series('clean:live', 'build', 'build:push'));
+const sass = require("gulp-sass")(require("sass"));
 
-/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-|  Run development environment
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
-gulp.task('default', gulp.series('clean', 'compile', 'watch'));
+function css() {
+  return src("src/scss/*.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(dest("dest/css/"));
+}
+
+exports.css = css;
+
+const concat = require("gulp-concat");
+
+function js() {
+  return src("src/js/*.js")
+    .pipe(concat("script.js"))
+    .pipe(dest("dist/js"));
+}
+
+exports.js = js;
+
+exports.watch = function () {
+  //watch("src/scss/*.scss", css)
+  watch("src/**/*.pug", html)
+}

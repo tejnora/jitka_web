@@ -3,10 +3,10 @@ mixin PricingTable(data)
   table.table.table-striped  
     thead
       tr
-        th Výkon MJ : parcela/100 m
+        th #{data.unit}
         th Cena
     tbody
     each item in data.items
       tr
         td #{item.name}
-        td #{item.price} 
+        td(style={width:'200px'}) #{item.price} 
