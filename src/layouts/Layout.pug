@@ -4,7 +4,7 @@
 block variables
   - var CWD = '';
   - var attrsHtml = { lang: `${ dir === 'rtl' ? 'ar' : 'en-US'}`, dir: dir || 'ltr' };
-  - var title = 'space| Responsive, Ecommerce & Business Template';
+  - var title = 'Ing. Jitka Tejnorová | Komplexní geodetické služby - Hradec Králové, Jičín, Pardubice, Poděbrady, Kolín, Nymburk';
   - var attrsBody = {};
   - var attrsMain = {};
   - var attrsLayout = {};
@@ -31,16 +31,10 @@ html()&attributes(attrsHtml)
 
 
     = '\n\n'
-    // ===============================================
-    //    Document Title
-    // ===============================================
     title=title
 
 
     = '\n\n'
-    // ===============================================
-    //    Favicons
-    // ===============================================
     block favicon
       link(rel="apple-touch-icon" sizes="180x180", href=`${CWD}assets/img/favicons/apple-touch-icon.png`)
       link(rel="icon" type="image/png" sizes="32x32", href=`${CWD}assets/img/favicons/favicon-32x32.png`)
@@ -54,10 +48,6 @@ html()&attributes(attrsHtml)
     block headScripts
 
     = '\n\n'
-    // ===============================================
-    //    Stylesheets
-    // ===============================================
-
     block styles
       +ThemeStyle
 
@@ -68,22 +58,13 @@ html()&attributes(attrsHtml)
     block beforeMainContent
 
     = '\n'
-    // ===============================================
-    //    Main Content
-    // ===============================================
     main()&attributes(attrsMain)
       block mainContent
-    // ===============================================
-    //    End of Main Content
-    // ===============================================
     = '\n\n'
 
     block afterMainContent
 
     = '\n\n'
-    // ===============================================
-    //    JavaScripts
-    // ===============================================
     script(src=`${CWD}vendors/@popperjs/popper.min.js`)
     script(src=`${CWD}vendors/bootstrap/bootstrap.min.js`)
     script(src=`${CWD}vendors/is/is.min.js`)

@@ -9,6 +9,14 @@ function html() {
 
 exports.html = html;
 
+function htmlRelease() {
+  return src("src/*.pug")
+    .pipe(pug({ pretty: false}))
+    .pipe(dest("dist"));
+}
+
+exports.htmlRelease = htmlRelease;
+
 const sass = require("gulp-sass")(require("sass"));
 
 function css() {
